@@ -19,8 +19,8 @@ export class LoginComponent {
   }
 
   logIn(){
-    sessionStorage.setItem('Guard', 'NULO');
+    sessionStorage.setItem('Guard', 'fasfasf');
     console.log(sessionStorage.getItem('Guard'));
-    this.router.navigate(['dashboard']);
+    this.router.navigate(['dashboard']); 
   }
 }

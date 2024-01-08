@@ -16,8 +16,8 @@ export const routes: Routes = [
         canActivate: [AuthGuard], //Un guard para Incentivos
         loadComponent: () => import('./components/incentive/incentive.component'), 
         children: [
-            { path: '', loadComponent: () => import('./components/incentive/incentive-list/incentive-list.component')},
-            { path: 'awards', loadComponent: () => import('./components/incentive/awards/awards.component') }
+            { path: '', loadComponent: () => import('./components/incentive/incentive-list/incentive-list.component'), canActivate: [AuthGuard]},
+            { path: 'awards', loadComponent: () => import('./components/incentive/awards/awards.component'), canActivate: [AuthGuard] }
         ]
     }
 ];

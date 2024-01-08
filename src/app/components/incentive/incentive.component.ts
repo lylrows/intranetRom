@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-incentive',
@@ -9,5 +10,10 @@ import { RouterModule } from '@angular/router';
   styleUrl: './incentive.component.scss'
 })
 export default class IncentiveComponent {
-
+  constructor(private authservice: AuthService,
+    private router: Router){}
+  logOut(){
+    this.authservice.logout();
+    this.router.navigate(['']); 
+  }
 }

@@ -1,8 +1,9 @@
 import { CanActivateFn } from '@angular/router';
 import { AuthService } from '../../services/auth.service';  // Asegúrate de importar y ajustar el servicio de autenticación según tu estructura
+import { inject } from '@angular/core';
 
 export const AuthGuard: CanActivateFn = (route, state) => {
-  const authService = new AuthService();
+  const authService = inject(AuthService);
   const isLoggedIn = authService.isLoggedIn(); // Reemplaza con tu lógica de autenticación
   console.log(isLoggedIn)
   if (isLoggedIn) {
